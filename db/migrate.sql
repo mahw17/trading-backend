@@ -1,0 +1,9 @@
+CREATE TABLE `users` (
+    `email` TEXT NOT NULL UNIQUE,
+    `pwd` TEXT NOT NULL,
+    `balance` INTEGER NOT NULL DEFAULT 0,
+    `stock` INTEGER NOT NULL DEFAULT 0,
+    `price` REAL NOT NULL DEFAULT 0,
+    PRIMARY KEY(`email`)
+);
+-- CREATE TABLE IF NOT EXISTS reports (route VARCHAR(255) NOT NULL, title VARCHAR(60) NOT NULL, content VARCHAR(2550) NOT NULL, UNIQUE(route));
