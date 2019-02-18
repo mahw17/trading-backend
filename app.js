@@ -13,7 +13,7 @@ const trade = require('./routes/trade');
 
 
 const app = express();
-const port = 1340;
+const port = 1380;
 
 app.use(cors());
 
