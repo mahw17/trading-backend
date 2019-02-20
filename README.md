@@ -64,6 +64,31 @@ Or
 }`
 
 
+## User
+### To request User Information
+`POST /user`
+
+Request header:
+`Content-Type: application/json`
+`x-access-token: sdfASDdfsasd464dsafsd3544sd`
+
+Request body according to:
+`{
+    "email":    ?
+}`
+
+Result:
+`{
+    "result":true,
+    "token": "sdfASDdfsasd464dsafsd3544sd"
+}`
+Errors:
+`{
+    "result":true, "user":{"email":"mahw17@student.bth.se","password":"$2a$10$08HPqRji7YqJHD9kFB1gYeNFgEgjQncz71ZMYpegiN0YjIHn3L3dS","balance":190,"stock":102,"price":8}
+}`
+
+Or
+`{"result":false,"err":"User does not exist."}`
 
 
 ## Deposit

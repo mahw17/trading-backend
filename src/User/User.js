@@ -131,13 +131,13 @@ class User {
          email,
          (err, row) => {
 
-                 let newStock = row.stock;
+                 let newStock = Number(row.stock);
 
                  // New balance
                  if (operator) {
-                     newStock = newStock + amount;
+                     newStock = newStock + Number(amount);
                  } else {
-                     newStock = newStock - amount;
+                     newStock = newStock - Number(amount);
                  }
 
                  // Update new balance in db

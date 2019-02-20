@@ -10,7 +10,7 @@ const login = require('./routes/login');
 const price = require('./routes/price');
 const register = require('./routes/register');
 const trade = require('./routes/trade');
-
+const user = require('./routes/user');
 
 const app = express();
 const port = 1380;
@@ -33,6 +33,7 @@ app.use('/login', login);
 app.use('/price', price);
 app.use('/register', register);
 app.use('/trade', trade);
+app.use('/user', user);
 
 
 // Start up server
