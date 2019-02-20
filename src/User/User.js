@@ -69,13 +69,13 @@ class User {
         email,
         (err, row) => {
 
-                let newBalance = row.balance;
+                let newBalance = Number(row.balance);
 
                 // New balance
                 if (operator) {
-                    newBalance = newBalance + amount;
+                    newBalance = newBalance + Number(amount);
                 } else {
-                    newBalance = newBalance - amount;
+                    newBalance = newBalance - Number(amount);
                 }
 
                 // Update new balance in db
