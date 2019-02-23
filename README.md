@@ -5,7 +5,18 @@ Banana - Trading
 [![Code Coverage](https://scrutinizer-ci.com/g/mahw17/trading-backend/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mahw17/trading-backend/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/mahw17/trading-backend/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mahw17/trading-backend/build-status/master)
 
+# Krav 1: Backend
+Applikationen snurrar på en nginx-server som är installerad på en droplet på Digital Ocean. Jag har valt ett node-js baserat ramverk - Express för att bygga applikationen på. Valet föll på denna typ av lösning då jag dels hade en hel del kod som kunde återanvändas men även pågrund av att Express verkar vara det mest populära ramverket inom node-js för denna typ av ändamål.
+Jag har för detta backend-api tagit ut ett subdomännamn 'trading-api.holmersson.se'.
 
+Nedan finns en beskrivning på API:et som är kopplat. Samtliga tjänster förutom registreringen kan även göras via en frontend del som finns tillgängligt på http://trading.holmersson.se.
+
+# Krav 4: Tester backend (optionell)
+Jag har skrivit enhetstester/funktionstester för att kontrollera det mest grundläggande i varje route. Detta repo är även kopplat till en CI-kedja som består av byggkontroll i Travis och kodtäcknings- och kodkomplexitetsanalys i Scrutinizer. Kodtäckningen är cirka 70% och detta är jag nöjd med då jag valt att inte göra några tester som kräver åtkomst till databasen då jag vet att det kan vara svårt att dölja dessa inloggningsuppgifter i Travis/Scrutinizer. För att nå denna nivå av kodtäckning krävdes en begränsad insats. Överst på denna sida finns 'badges' som är kopplade till de olika tjänsterna, dessa fungerar även som länkar till respektive tjänst.
+
+Då testerna i sig inte är så omfattande säger denna typ av tjänster bara till om jag gjort något riktigt dumt. Det finns säkerligen en hel del felaktigheter som ej fångas av de tester jag gjort.
+
+I filen 'coverage/index.html' kan kodtäckning ses lokalt annars kan den även visas via Scrutinizer.
 
 # Banana-API documentation
 
