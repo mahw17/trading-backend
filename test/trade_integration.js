@@ -7,44 +7,55 @@ const server = require('../app.js');
 
 chai.should();
 
-const db = require("../db/database.js");
-
 chai.use(chaiHttp);
 
-describe('Reports', () => {
+describe('Trading funcs', () => {
 
-    describe('GET /reports/kmom01', () => {
+    describe('GET /price', () => {
         it('200 HAPPY PATH', (done) => {
             chai.request(server)
-                .get("/reports/kmom01")
+                .get("/price")
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.an("object");
-                    res.body.data.should.be.an("object");
-                    res.body.result.should.be.true;
+                    // res.body.data.should.be.an("object");
+                    // res.body.result.should.be.true;
                     done();
                 });
         });
     });
 
-    describe('GET /reports/kmom02', () => {
+    describe('GET /trade', () => {
         it('200 HAPPY PATH', (done) => {
             chai.request(server)
-                .get("/reports/kmom02")
+                .get("/trade")
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an("object");
-                    res.body.data.should.be.an("object");
-                    res.body.result.should.be.true;
+                    res.body.should.be.an("array");
+                    // res.body.data.should.be.an("object");
+                    // res.body.result.should.be.true;
                     done();
                 });
         });
     });
 
-    describe('POST /reports', () => {
+    describe('POST /trade', () => {
         it('200 HAPPY PATH', (done) => {
             chai.request(server)
-                .post("/reports")
+                .post("/trade")
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.an("object");
+                    res.body.result.should.be.false;
+                    done();
+                });
+        });
+    });
+
+    describe('POST /deposit', () => {
+        it('200 HAPPY PATH', (done) => {
+            chai.request(server)
+                .post("/deposit")
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.an("object");

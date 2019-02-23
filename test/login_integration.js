@@ -7,8 +7,6 @@ const server = require('../app.js');
 
 chai.should();
 
-const db = require("../db/database.js");
-
 chai.use(chaiHttp);
 
 describe('Login', () => {
